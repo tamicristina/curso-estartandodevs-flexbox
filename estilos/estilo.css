@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
+/* margin e padding 0 para não ficar com margens nas laterais */
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Nunito;
+}
+/* aqui deixa o html e o body ocupando 100% da tela */
+body,
+html {
+  height: 100%;
+}
+/* Imagem do cabeçalho com o tamanho da largura e altura */
+.image-menu {
+  width: 120px;
+  height: 120px;
+}
+/* Texto do menu com definição de: cor, tamanho da fonte, e negrito */
+.name-profile {
+  display: flex;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Centralizei o conteúdo utilizando o flexbox, width de 100% para pegar toda tela, coloquei position fixed 
+para que o menu fique fixado na tela ao rolar as imagens, para que isso funcione foi necessário colocar
+top: 0px para não sobrar margem acima do menu*/
+#menu-topo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(224, 166, 19);
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+}
+/* Display flex para que ele possa se adaptar a qualquer tamanho de tela, utilizei o justify-content
+para ajustar o texto e o widt 60% para ajustar o espaçamento e poder centralizar o texto no menu  */
+.menu {
+  display: flex;
+  margin: 0px 30px;
+  justify-content: space-evenly;
+  width: 60%;
+}
+
+/* LI item: list-style: none para tirar a listagem do texto */
+.menu-list {
+  list-style: none;
+}
+/* Efeito do texto do menu topo */
+.menu-list :hover {
+  border-bottom: 2px solid #faf9f9;
+}
+/* Text decoration: none para tirar o sublinhado do texto, padding para dar espaçamento entre um menu e o outro */
+.menu-list a {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bold;
+}
+/* Diplay flex para ajuste da responsividade, flex wrap para quebra de imagens, justify content para centralização
+do conteúdo, coloquei o margin topo para dar espaçamento entre o menu e as imagens, padding bottom para dar
+espaçamento entre o container e o footer */
+.container-geral {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 90px;
+  padding-bottom: 80px;
+}
+/* Herdou as configurações do container geral, utilizei para ajustar as imagens, border radius para arrendondar
+as pontas das imagens */
+.img-container {
+  width: 350px;
+  border-radius: 5%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Box shadow: deslocamento lateral,deslocamento vertical,espalhamento sombra,cor */
+.card {
+  margin: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(224, 166, 19);
+  border-radius: 5%;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  padding-top: 0pt;
+}
+
+/* Utilizei o flex box para centralizar a imagem, position fixed e bottom 0 para poder deixar o 
+footer fixo durante a rolagem */
+
+.footer-end {
+  display: flex;
+  position: fixed;
+  height: 10%;
+  width: 100%;
+  background-color: rgb(224, 166, 19);
+  bottom: 0px;
+  margin-top: 80px;
+}
+
+/* Usar o display flex nas tags filhas caso queira ajusta-las, quando coloco na tag pai ele alinha apenas as divs */
+
+.img-footer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex: 2;
+  justify-content: center;
+}
+
+.logo-footer {
+  margin-top: 20px;
+  width: 60;
+  height: 40px;
+}
+
+/* Coloquei o diplay flex para a responsividade, e o justify content para jogar o texto para o fim do footer
+flex 1 conta da divisão das divs do footer, para que ocupem o mesmo espaço */
+.footer-text {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  color: #faf9f9;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* configuração da div vazia para poder alinhar o conteúdo do footer */
+.space {
+  flex: 1;
+}
+
+@media (max-width: 479px) {
+  .container-geral {
+    padding-bottom: 130px;
+  }
+
+  .name-profile {
+    font-size: 25px;
+    font-weight: bold;
+    max-width: initial;
+  }
+  /* Coloquei o flex direction em colum para que a imagem e o texo fiquem um abaixo do outro */
+  .footer-end {
+    height: 150px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  /* Coloquei o width da div de 100% para que ela ocupasse todo o rodapé e centralizasse
+a imagem ao meio com o flex direction */
+  .img-footer {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  /* Coloquei o width da div de 100% para que ela ocupasse todo o rodapé e centralizasse
+o texto ao meio com o flex direction ao meio */
+
+  .footer-text {
+    padding-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-end;
+  }
+
+  /* Aqui eu defini o novo padrão da imagem do footer ao diminuir o tamanho para mobile */
+  .logo-footer {
+    width: 70px;
+    height: 40px;
+  }
+}
